@@ -167,8 +167,7 @@ class Page extends \R\Page
     public function _redirect($uri = null)
     {
         if ($uri) {
-            $prelink = $this->request->getUri()->getBasePath();
-            $location = $prelink . "/" . $uri;
+            $location = $this->request->getUri()->getBasePath() . "/" . $uri;
             $this->response = $this->response->withHeader("Location", $location);
             return;
         }
